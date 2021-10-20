@@ -1,5 +1,7 @@
 package com.example.secretinformer;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -38,14 +40,15 @@ public class webInteractor {
                 break;
             case "submitComplain":
                 try {
-                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("name", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8")+"&"+URLEncoder.encode("complain", "UTF-8")+"="+URLEncoder.encode(params[1], "UTF-8");
+                    Log.v("Info", choice + params[0] + params[1]);
+                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8")+"&"+URLEncoder.encode("complain", "UTF-8")+"="+URLEncoder.encode(params[1], "UTF-8");
                 } catch (UnsupportedEncodingException ue) {
                     ue.printStackTrace();
                 }
                 break;
             case "getComplainReviews":
                 try {
-                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("name", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8");
+                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8");
                 } catch (UnsupportedEncodingException ue) {
                     ue.printStackTrace();
                 }
