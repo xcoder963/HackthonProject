@@ -20,18 +20,18 @@ public class webInteractor {
 
     public String doServerInteraction(String choice, String... params) {
         //will place the string here
-        netURL = "";
+        netURL = "http://192.168.1.7/secretInformerWeb/signalReciever.php";
         switch (choice) {
             case "register":
                 try {
-                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("name", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8")+"&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(params[1], "UTF-8");
+                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("name", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8")+"&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(params[1], "UTF-8")+"&"+URLEncoder.encode("phno", "UTF-8")+"="+URLEncoder.encode(params[2], "UTF-8")+"&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(params[3], "UTF-8");
                 } catch (UnsupportedEncodingException ue) {
                     ue.printStackTrace();
                 }
                 break;
             case "login":
                 try {
-                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("name", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8")+"&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(params[1], "UTF-8");
+                    post_data = URLEncoder.encode("actionType", "UTF-8")+"="+URLEncoder.encode(choice, "UTF-8")+"&"+URLEncoder.encode("email", "UTF-8")+"="+URLEncoder.encode(params[0], "UTF-8")+"&"+URLEncoder.encode("password", "UTF-8")+"="+URLEncoder.encode(params[1], "UTF-8");
                 } catch (UnsupportedEncodingException ue) {
                     ue.printStackTrace();
                 }

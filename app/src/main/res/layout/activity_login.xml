@@ -6,15 +6,16 @@
     android:gravity="center" >
 
     <EditText
-        android:id="@+id/userNameL"
+        android:id="@+id/userEmailL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter your user name:-" />
+        android:hint="Enter your email:-" />
 
     <EditText
         android:id="@+id/userPasswordL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="Enter your password:-" />
 
     <Button
