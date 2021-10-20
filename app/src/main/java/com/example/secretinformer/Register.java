@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
 
-    EditText userName, userPassword;
+    EditText userName, userPassword, userEmail, userPHNO;
     Button registerUser;
     BackGroundWorker backGroundWorker;
     TextView loadLogin;
@@ -39,6 +39,8 @@ public class Register extends AppCompatActivity {
         }
 
         userName = (EditText) findViewById(R.id.userName);
+        userEmail = (EditText) findViewById(R.id.userEmail);
+        userPHNO = (EditText) findViewById(R.id.userPHNO);
         userPassword = (EditText) findViewById(R.id.userPassword);
 
         registerUser = (Button) findViewById(R.id.registerUser);
@@ -48,7 +50,7 @@ public class Register extends AppCompatActivity {
         registerUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                registerUser(userName.getText().toString(), userPassword.getText().toString());
+                registerUser(userName.getText().toString(), userEmail.getText().toString(), userPHNO.getText().toString(), userPassword.getText().toString());
             }
         });
 
@@ -62,8 +64,8 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    public void registerUser(String uName, String uPass) {
+    public void registerUser(String uName, String email, String phno, String uPass) {
         backGroundWorker = new BackGroundWorker(this);
-        backGroundWorker.execute("register", uName, uPass);
+        backGroundWorker.execute("register", uName, email, phno, uPass);
     }
 }

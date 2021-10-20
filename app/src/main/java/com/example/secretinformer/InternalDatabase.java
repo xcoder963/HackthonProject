@@ -16,7 +16,7 @@ public class InternalDatabase extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table user_data(uname text, password text);");
+        db.execSQL("create table user_data(name text, password text);");
     }
 
     @Override
