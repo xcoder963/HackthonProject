@@ -17,11 +17,13 @@ public class InternalDatabase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table user_data(name text, password text);");
+        //db.execSQL("create table issues(comaplains txt);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("drop table if exists user_data;");
+        //db.execSQL("drop table if exists issues;");
         onCreate(db);
     }
 
