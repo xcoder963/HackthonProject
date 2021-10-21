@@ -37,7 +37,7 @@ public class BackGroundWorker extends AsyncTask<String, Void, String> {
                 internalDatabase.insertData(params[1], params[4]);
                 break;
             case "submitComplain":
-                output = webIntr.doServerInteraction("submitComplain", params[1], params[2]);
+                output = webIntr.doServerInteraction("submitComplain", params[1], params[2], params[3], params[4]);
                 break;
             case "getComplainReviews":
                 break;
